@@ -20,15 +20,17 @@
                 ></app-user-card>
             </div>
         }
-        <div class="col-md-3">
-            <button
-                [disabled]="usersForm.disabled"
-                class="add"
-                type="button"
-                (click)="addUserForm()"
-            >
-                <span class="add-icon"><i class="bi bi-plus-circle-dotted"></i></span>
-            </button>
-        </div>
+        @if (formsCounter < 10) {
+            <div class="col-md-3">
+                <button
+                    [disabled]="usersForm.disabled"
+                    class="add"
+                    type="button"
+                    (click)="addUserForm()"
+                >
+                    <span class="add-icon"><i class="bi bi-plus-circle-dotted"></i></span>
+                </button>
+            </div>
+        }
     </div>
 </form>

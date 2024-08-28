@@ -1,5 +1,5 @@
-import {Directive, DoCheck, ElementRef, inject, Input, OnDestroy} from '@angular/core';
-import {NgControl} from '@angular/forms';
+import { Directive, DoCheck, ElementRef, inject, Input, OnDestroy } from '@angular/core';
+import { NgControl } from '@angular/forms';
 
 @Directive({
   selector: '[appValidation]',

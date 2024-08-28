@@ -27,14 +27,12 @@ export class FormsComponent {
   #today: Date;
   timer$: Observable<Date | null> | null = null;
 
-  #generateForm(): FormGroup {
-    return new FormGroup<{
-      users: FormArray<FormGroup<UserForm>>;
-    }>({ users: new FormArray<FormGroup<UserForm>>([]) });
-  }
-
   get invalidFormsCounter(): number {
     return this.usersForm.controls.users.controls.filter((c) => c.invalid).length;
+  }
+
+  get formsCounter(): number {
+    return this.usersForm.controls.users.length;
   }
 
   constructor() {
@@ -42,6 +40,12 @@ export class FormsComponent {
     this.#today.setHours(0, 0, 0, 0);
 
     this.addUserForm();
+  }
+
+  #generateForm(): FormGroup {
+    return new FormGroup<{
+      users: FormArray<FormGroup<UserForm>>;
+    }>({ users: new FormArray<FormGroup<UserForm>>([]) });
   }
 
   addUserForm(): void {
