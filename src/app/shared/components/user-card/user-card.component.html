@@ -1,0 +1,48 @@
+<form [formGroup]="form" class="form">
+    @if (cantBeClosed) {
+        <span class="close" (click)="closeCrd()">x</span>
+    }
+    <label>
+        Country
+        <app-input-autocomplete
+            [items]="countries"
+            formControlName="country"
+            placeholder="Start typing..."
+            appValidation
+            [errorTexts]="{
+                required: 'Field is required',
+                invalid: 'Please provide a correct Country',
+            }"
+        ></app-input-autocomplete>
+    </label>
+
+    <div>
+        <label class="mb-2">
+            Username
+            <input
+                type="text"
+                appValidation
+                class="form-control"
+                formControlName="userName"
+                [errorTexts]="{
+                    required: 'Field is required',
+                    invalid: 'Please provide a correct Username',
+                }"
+            />
+        </label>
+    </div>
+
+    <label
+        >BirthDay
+        <input
+            type="date"
+            appValidation
+            class="form-control"
+            formControlName="birthDay"
+            [errorTexts]="{
+                required: 'Field is required',
+                invalid: 'Please provide a correct Birthday',
+            }"
+        />
+    </label>
+</form>

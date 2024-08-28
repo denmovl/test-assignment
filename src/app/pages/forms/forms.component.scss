@@ -1,0 +1,38 @@
+.users {
+  display: flex;
+  gap: 10px;
+}
+
+.add {
+  width: 100%;
+  height: 100%;
+  border: 1px dashed #ccc;
+  min-height: 250px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    .add-icon i {
+      font-size: 45px;
+    }
+  }
+}
+
+.add-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: dodgerblue;
+
+  i {
+    font-size: 35px;
+  }
+}
+
+.invalid-counter {
+  color: red;
+}

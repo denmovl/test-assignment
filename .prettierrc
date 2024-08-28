@@ -1,0 +1,33 @@
+{
+  "singleQuote": true,
+  "printWidth": 100,
+  "useTabs": false,
+  "tabWidth": 2,
+  "semi": true,
+  "trailingComma": "all",
+  "attributeGroups": [
+    "^\\*",
+    "^\\w+(?<!data|aria|http|let)-",
+    "^(id|\\[id\\])$",
+    "^class$",
+    "^\\[class\\.",
+    "^#",
+    "^let-",
+    "$DEFAULT",
+    "^\\[[^\\(@]",
+    "^\\[\\(",
+    "^\\(",
+    "^@",
+    "^\\[@"
+  ],
+  "attributeSort": "ASC",
+  "overrides": [
+    {
+      "files": "*.component.html",
+      "options": {
+        "parser": "angular",
+        "tabWidth": 4
+      }
+    }
+  ]
+}

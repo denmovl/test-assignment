@@ -1,0 +1,34 @@
+<form [formGroup]="usersForm" class="container" (ngSubmit)="submit()">
+    <div class="header mt-5 mb-2 d-flex">
+        @if (timer$ | async; as timer) {
+            <button (click)="cancel()" type="button" class="btn btn-danger">Cancel</button>
+            <span>{{ timer | date: 'mm:ss' }}</span>
+        } @else {
+            <button type="submit" class="btn btn-primary">Submit all primary</button>
+        }
+        @if (invalidFormsCounter; as invalidCounter) {
+            <p class="ms-1 m-0 invalid-counter">Invalid Forms: {{ invalidCounter }}</p>
+        }
+    </div>
+    <div class="users">
+        @for (userForm of usersForm.controls.users.controls; track userForm) {
+            <div class="col-md-3">
+                <app-user-card
+                    [form]="userForm"
+                    [cantBeClosed]="$index !== 0"
+                    (closeCard)="onClose($index)"
+                ></app-user-card>
+            </div>
+        }
+        <div class="col-md-3">
+            <button
+                [disabled]="usersForm.disabled"
+                class="add"
+                type="button"
+                (click)="addUserForm()"
+            >
+                <span class="add-icon"><i class="bi bi-plus-circle-dotted"></i></span>
+            </button>
+        </div>
+    </div>
+</form>
