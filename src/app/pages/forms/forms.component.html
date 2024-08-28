@@ -1,13 +1,13 @@
 <form [formGroup]="usersForm" class="container" (ngSubmit)="submit()">
-    <div class="header mt-5 mb-2 d-flex">
+    <div class="header mt-5 mb-2 d-flex align-items-center">
         @if (timer$ | async; as timer) {
             <button (click)="cancel()" type="button" class="btn btn-danger">Cancel</button>
-            <span>{{ timer | date: 'mm:ss' }}</span>
+            <span class="ms-2">{{ timer | date: 'mm:ss' }}</span>
         } @else {
             <button type="submit" class="btn btn-primary">Submit all primary</button>
         }
         @if (invalidFormsCounter; as invalidCounter) {
-            <p class="ms-1 m-0 invalid-counter">Invalid Forms: {{ invalidCounter }}</p>
+            <div class="ms-2 m-0 invalid-counter">Invalid Forms: {{ invalidCounter }}</div>
         }
     </div>
     <div class="users">
